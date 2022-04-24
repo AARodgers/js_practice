@@ -7,12 +7,14 @@
     <title>Hello HTML</title>
     <script>
       function countToTen() {
-        var count = 0;
+        var count = 0; // this is a single line comment
         while (count < 10) {
           count++;
           document.getElementById("theCount").innerHTML += count + "<br>";
         }
       }
+      /* this is a multi-line
+      comment */
     </script>
   </head>
   <body onload="countToTen();">
@@ -20,5 +22,12 @@
     <h1>Let's Count to 10 with JavaScript</h1>
     <p id="theCount"></p>
     <button id="bigButton" onclick="alert('Hello World');">Click Here</button>
+
+    <script>
+      var firstNumber = prompt("Enter the first number");
+      var secondNumber = prompt("Enter the second number");
+      var total = Number(firstNumber) + Number(secondNumber);
+      alert (total);
+    </script>
   </body>
 </html>
