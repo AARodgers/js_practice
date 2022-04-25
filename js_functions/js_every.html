@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Arrays</h1>
+<h2>The every() Method</h2>
+
+<p>every() returns true if all elements in an array pass a test (provided as a function).</p>
+
+<p id="demo"></p>
+
+<script>
+const ages = [32, 33, 16, 40];
+document.getElementById("demo").innerHTML = ages.every(checkAge);
+
+function checkAge(age) {
+  return age > 18;
+}
+</script>
+
+</body>
+</html>
