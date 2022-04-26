@@ -98,5 +98,22 @@
       time < 12 && document.write("Good Morning");
     </script>
     <p>It first looks to see if time is less than 12. If it is, print what is after &&, if not do nothing.</p>
+
+    <hr>
+    <p>A for loop:</p>
+    <script>
+      for (var x = 1; x < 10; x++){
+        document.write(x);
+      }
+    </script>
+
+    <hr>
+    <p>Listing Contents of an array with a for Loop</p>
+    <script>
+      var areaCodes = ["770", "404", "303", "901"];
+      for (x=0; x < areaCodes.length -1; x++){
+        document.write("Different Area Codes:" + areaCode[x] + "<br>");
+      }
+    </script>
   </body>
 </html>
