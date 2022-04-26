@@ -21,27 +21,82 @@
   <!--onload lets you execute script after the page has loaded-->
     <h1>Let's Count to 10 with JavaScript</h1>
     <p id="theCount"></p>
+
     <hr>
     <p>Example of an onclick button:</p>
     <button id="bigButton" onclick="alert('Hello World');">Click Here</button>
 
-    <script>
-      var firstNumber = prompt("Enter the first number");
-      var secondNumber = prompt("Enter the second number");
-      var total = Number(firstNumber) + Number(secondNumber);
-      alert (total);
-    </script>
     <hr>
     <script>
       var animals = ["tiger", "bear"];
       var fruit = ["cantaloupe", "orange"];
       var dishes = ["plate", "bowl", "cup"];
       var fruitsAndAnimals = fruit.concat(animals);
-      document.write ("Concantonate a fruit and animal array to get: " + fruitsAndAnimals + "<br>");
+      document.write ("Concantenate a fruit and animal array to get: " + fruitsAndAnimals + "<br>");
       var whereIsTheTiger = animals.indexOf("tiger");
       document.write (" For array [\"tiger\", \"bear\"]. The tiger has an index of: " + whereIsTheTiger + "<br>");
     </script>
+
     <hr>
-    
+    <p>See page 291 for other html for Wild Birthday Game and Number Prompts</p>
+    <!--<script src="js/arithmetic_operators.js"></script>-->
+
+    <hr>
+    <p>If/Else Statements:</p>
+    <script>
+      var age = 19;
+      if (age < 21){
+        document.write("You are under the legal drinking age.");
+      } else {
+        document.write("What'll it be?");
+      }
+    </script>
+    <script>
+      var time = 15;
+      if (time < 12) {
+        document.write("Good Morning");
+      } else if (time < 17){
+        document.write("Good Afternoon");
+      } else if (time < 20){
+        document.write("Good Evening");
+      } else {
+        document.write("Good Nigt");
+      }
+    </script>
+
+    <hr>
+    <p>Switch Statements:</p>
+    <script>
+      var languagePreference = "Spanish";
+      switch (languagePreference){
+        case "English":
+          document.write('Hello');
+          break;
+        case "Spanish":
+          document.write('Hola');
+          break;
+        case "German":
+          document.write('Guten Tag');
+          break;
+        case "French":
+          document.write('Bon Jour');
+          break;
+        default:
+          document.write("I'm sorry, I don't speak" + languagePreference + "!");
+      }
+    </script>
+
+    <hr>
+    <p>Ternary Operator instead of if/else</p>
+    <script>
+      var time = 11;
+      var whatToSay = (time < 12 ? document.write("Good Morning") : document.write("Hello"));
+    </script>
+    <p>Or use the logical AND (&&) operator</p>
+    <script>
+      var time = 11;
+      time < 12 && document.write("Good Morning");
+    </script>
+    <p>It first looks to see if time is less than 12. If it is, print what is after &&, if not do nothing.</p>
   </body>
 </html>
