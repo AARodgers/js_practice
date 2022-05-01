@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title>Arugments Passed By Value</title>
+</head>
+<body>
+  <script>
+    /**
+     * increment two numbers
+     * @param {number} number1
+     * @param {number} number2
+     */
+
+     function addToMyNumbers(number1, number2){
+       number1++;
+       number2++;
+       document.write("number 1: " + number1 "<br>");
+       document.write("number 2: " + number2);
+     }
+
+     var number1 = 3;
+     var number2 = 12;
+
+     addToMyNumbers(number1, number2);
+     document.write("original number 1: " + number1);
+     document.write("original number 2: " + number2);
+  </script>
+</body>
+</html>
