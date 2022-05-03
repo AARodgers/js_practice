@@ -129,5 +129,62 @@
     <p>To Display the Date:</p>
     <script src="js/display_current_date.js"></script>
 
+    <hr>
+    <p>Self-executing anonymous functions get rid of the variable created inside them after
+      function executes and it saves memory.
+    </p>
+    <script>
+      var myVariable = "I live outside the function";
+      (function() {
+        var myVariable = "I live in this anonymous function";
+        document.write(myVariable + "<br>");
+      })();
+      document.write(myVariable);
+    </script>
+
+    <hr>
+    <p>Every recursive function must have a base case. It is the condition under which a recursive function's job is done.</p>
+    <p>Here is a recursive function to square numbers until the number is greater then 1,000,000</p>
+    <script>
+      function squareItUp(startingNumber) {
+        // Termination conditions, invalid input
+        if ((typeof startingNumber != 'number') || (startingNumber <= 1)) {
+          return - 1; // exit the function
+        }
+        square = startingNumber * startingNumber;
+        if (square > 1000000) {
+          document.write(square);
+        } else {
+          squareItUp(square);
+        }
+      }
+      document.write(squareItUp(5));
+      // how do i get rid of the undefined when it prints to browser?
+    </script>
+
+    <hr>
+    <p>Declaring a Function w/in a Function. The below function will call an error saying that martianName if not defined because the variables
+      within a function that are within another function aren't available to that outer function. To get their values you need a return statement. </p>
+    <script>
+      function turnIntoAMartian(myName) {
+	      function recallName(myName) {
+		      var martianName = myName + " Martian";
+        }
+        recallName(myName);
+      console.log(martianName);
+      }
+    </script>
+    <p>See function with return values.</p>
+    <script>
+      function turnIntoAMartian(myName) {
+        function recallName(myName) {
+          var martianName = myName + " Martian";
+          return martianName;
+        }
+      var martianName = recallName(myName);
+      console.log(martianName);
+      }
+    </script>
+
   </body>
 </html>
