@@ -1,0 +1,41 @@
+<html>
+<head>
+  <title>The WatzThis? Chair Configuator</title>
+</head>
+<body>
+  <p>This program creates and object called chair, loops through each of the object's properties,
+    and asks the user to input a value for each property. When the user has entered a value for each
+    property, the writeChairReceipt function is called and prints the properties along with the values
+    that the user entered.
+  </p>
+  <script>
+    var myChair = {
+      "cushionMaterial" : "",
+      "numberOfLegs" : "",
+      "legHeight" : ""
+    };
+
+    function configureChair() {
+      var userValue;
+      for (var property in myChair) {
+        if (myChair.hasOwnProperty(property)) {
+          userValue = prompt("Enter a value for " + property);
+          myChair[property] = userValue;
+        }
+      }
+    }
+
+    function writeChairReceipt() {
+      document.write("<h2>Your chair will have the following configuration:</h2>");
+      for  (var property in myChair) {
+        if (myChair.hasOwnProperty(property)) {
+          document.write(property + ": " + myChair[property] + "<br>");
+        }
+      }
+    }
+
+    configureChair();
+    writeChairReceipt();
+  </script>
+</body>
+</html>

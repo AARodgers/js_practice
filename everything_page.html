@@ -186,5 +186,52 @@
       }
     </script>
 
+    <hr>
+    <p>An object has properties and properties that are functions are called methods. Here is a guitar object.</p>
+    <p>
+      var guitar = {
+        bodyColor: "black",
+        scratchPlateColor: "white",
+        numberOfStrings: 6,
+        brand: "Yamaha",
+        bodyType: "solid",
+        strum: function() {...},
+        tune: function() {...}
+      };
+    </p>
+
+  <hr>
+  <p>Defining an object with object literals is most commonly used.</p>
+  <p>var person = { eyes: 2, feet: 2, hands: 2, eyeColor: "blue" };</p>
+
+  <hr>
+  <p>Defining objects with an Object constructor</p>
+  <p>
+    var person = new Object();
+    person.feet = 2;
+    person.name = "Sandy";
+    person.hair = "black";
+  </p>
+
+  <hr>
+  <p>Retrieving and Setting Object Properties</p>
+  <p>To create a new property called firstName in the person object or to modify the value of an existing firstName property, use dot notation.</p>
+  <p>person.firstName = "Glenn";</p>
+
+  <hr>
+  <p>To retrieve the value of a property using dot notation</p>
+  <p>var fullname = person.firstName + person.lastName;</p>
+  <p>To write the value of a person.firstName to HTML doc</p>
+  <p>document.write(person.firstName);</p>
+
+  <hr>
+  <p>Using square bracket notation to get and set properties</p>
+  <p>person["firstName"] = "Iggy";</p>
+  <p>With square bracket you can use variables inside square-bracket when you don't know the name of the property you want to retrieve.</p>
+  <p>Below is same as above, but has a variable inside the sq bracket rather than a literal string</p>
+  <p>var personProperty = "firstName";</p>
+  <p>person[personProperty] = "Iggy";</p>
+
+
   </body>
 </html>
