@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>The HTML Family</title>
+  </head>
+  <body>
+    <section>
+      <p>First child</p>
+      <p>Second child</p>
+      <p>Third child</p>
+    </section>
+    <h1>Nodes in this section element</h1>
+    <script>
+      var myNodelist = document.body.childNodes[1].childNodes;
+      for ( i = 0; i < myNodelist.length; i++) {
+        document.write(myNodelist[i] + "<br>");
+      }
+    </script>
+  </body>
+</html>
