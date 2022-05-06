@@ -1,0 +1,29 @@
+<html>
+<head>
+  <title>Inheritence demo</title>
+</head>
+<body>
+  <script>
+    function Person() {
+      this.eyes = 2;
+      this.ears = 2;
+      this.arms = 2;
+      this.hands = 2;
+      this.feet = 2;
+      this.legs = 2;
+      this.species = "Homo Sapien";
+    }
+    var willieNelson = new Person();
+    var jonnyCash = new Person();
+    var patsyCline = new Person();
+    // To add more properties to Person use teh .prototype object
+    Person.prototype.knees = 2;
+    Person.prototype.toes = 2;
+    Person.prototype.elbows = 2;
+    // Check the values of existing objects for the new properties
+    document.write(patsyCline.toes);
+
+    alert("Willie Nelson has " + willieNelson.feet + " feet!")
+  </script>
+</body>
+</html>
