@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Generating a list</title>
+  <body>
+    <h1>Here are some types of balls</h1>
+    <ul id="ballList"></ul>
+    <script>
+      var typeOfBall = ["basket", "base", "soccer", "foot", "hand"];
+      for (i =0; i<typeOfBall.length; i++) {
+      var listElement = document.createElement("li");
+      listElement.innerHTML = typeOfBall[i];
+      document.getElementById("ballList").appendChild(listElement);
+    }
+    </script>
+  </body>
+  </head>
+</html>
