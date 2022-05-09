@@ -3,12 +3,15 @@
     <title>The HTML Family</title>
   </head>
   <body>
-    <section>
-      <p>First child</p>
-      <p>Second child</p>
-      <p>Third child</p>
+    <section> <!--Parent of 3 p elements, child of body-->
+      <p>First child</p> <!-- 1st child of section element, has 2 siblings-->
+      <p>Second child</p> <!-- 2nd child of section element, has 2 siblings-->
+      <p>Third child</p> <!-- 3rd child of section element, has 2 siblings-->
     </section>
-    <h1>Nodes in this section element</h1>
+    <h1>Nodes in this section element. The single space between the opening section tag and the comment creates
+      an entire node in the DOM tree. This needs to be taken into consideration when navigating the DOM using
+      relationships between nodes.
+    </h1>
     <script>
       var myNodelist = document.body.childNodes[1].childNodes;
       for ( i = 0; i < myNodelist.length; i++) {
