@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Using getElementByTagName</title>
+    <script>
+      function numberElements(tagName) {
+        var getTags = document.getElementsByTagName(tagName);
+        for(i = 0; i < getTags.length; i++){
+          getTags[i].innerHTML = i + 1;
+        }
+      }
+    </script>
+    <!--Script can be used to select and change elements-->
+  </head>
+  <body>
+    <h1>this text will go away</h1>
+    <h1>this will get overwritten</h1>
+    <h1>JS will erase this</h1>
+    <script>
+      numberElements("h1");
+    </script>
+  </body>
+</html>
