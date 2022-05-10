@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Remove and element</title>
+    <script>
+      function removeFirstParagraph() {
+        var firstPara = document.getElementById("firstparagraph");
+        firstPara.parentNode.removeChild(firstPara);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="gibberish">
+      <p id="firstparagraph">
+        blah blah blah
+      </p>
+    </div>
+    <button onclick="removeFirstParagraph();">That's Gibberish!</button>
+  </body>
+</html>
