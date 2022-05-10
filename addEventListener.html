@@ -4,7 +4,7 @@
     <title>Counting App</title>
     <script>
       // wait until the window is loaded before registering the onclick event
-      window.addEventListener('load', registerEvents, fasle);
+      window.addEventListener('load', registerEvents, false);
       // create a global couting variable
       var theCount = 0;
       /**
@@ -14,6 +14,12 @@
         document.getElementById("incrementButton").addEventListener('click', increaseCount, false);
         document.getElementById("incrementButton").addEventListener('click', changeSize, false);
       }
+
+      /**
+       * the addEventListener() method is implemented by using 3 arguements: first is the event type (just the name of the event  without the on prefix),
+       * second arguement is the function to call when the event happens, since we don't want to call it immediately, we leave off the parentheses,
+       * third arguement is a boolean value that indicates the order in the which event handlers execute when an element with an event has a parent
+       * element that also is associated with an event. 
 
       /**
        * Increments theCount and displays result.

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Capturing vs.Event Bubbling</title>
+    <style>
+      #theText {font-size: 18px;}
+      h1 {
+        border: 1px solid #000;
+        background-color: #dadada;
+      }
+      #capEvent, #bubEvent {
+        background-color: #666;
+      }
+    </style>
+    <script>
+      // wait until the window is loaded before registering the events
+      window.addEventListener('load', registeredEvents, false);
+      /** Registers onclick events
+       */
+      function registeredEvents(e) {
+        document.getElementById("capTitle").addEventListener('click', makeTiny, true);
+        document.getElementById("capEvent").addEventListener('click', makeHuge, true);
+        document.getElementById("bubTitle").addEventListener('click', makeTiny, false);
+        document.getElementById("bubEvent").addEventListener('click', makeHuge, false);
+      }
+
+      function makeHuge(e) {
+        console.log("making the text huge");
+        document.getElementById("theText").style.fontSize = "80px";
+      }
+
+      function makeTiny(e) {
+        console.log("making the text tiny");
+        document.getElementById("theText").style.fontSize = "10px";
+      }
+    </script>
+  </head>
+  <body>
+    <h1 id="capTitle">Event <span id="capEvent">capturing</span></h1>
+    <h1 id="bubTitle">Event <span id="bubEvent">bubbling</span></h1>
+    <p id="theText">Hello, Events!</p>
+  </body>
+</html>
+
+<!-- When the word capturing is clicked, the event registered to the larger container fires first ( what is that event?) followed by the event registered
+to the event containing the word  capturing ( this b. there is true as the third arguement in the addEventListener())-->
+
+<!--When you click the word bubbling, the event registered to that span fires first, followed by the event on its parent element-->
