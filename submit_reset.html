@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Subscribe to our newsletter</title>
+    <script>
+      function setFormDefaults() {
+        document.forms.subscribeForm.method = "post";
+        document.forms.subscribeForm.target = "_blank";
+        document.forms.subscribeForm.action =
+        "http://watzthis.us9.list-mange.com/subscribe/post?u=1e6d8741f7db587af747ec056&amp; id=663906e3ba";
+        // action tells the browser what to do with the user input, often action is server-side script
+        // register the button events
+        document.getElementById('btnSubscribe').addEventListener('click', submitForm);
+        // first arguement 'click' is the event call and the second is the function to call when the event happens
+        document.getElementById('btnReset').addEventListener('click', resetForm);
+      }
+
+      function submitForm() {
+        document.forms.subscribeForm.submit();
+      }
+      /** .submit causes the form to submit its values according to the properties of the form
+       * like action, method, target), it does the same thing as <input type="submit" value="Submit the form"
+       */
+
+
+      function resetForm() {
+        document.forms.subscribeForm.reset();
+      }
+      /** .reset clears any changes in the form's fields that were made after the page loaded and resets
+       * the default values
+       * / 
+    </script>
+  </head>
+  <body onload="setFormDefaults();">
+    <form name="subscribeForm">
+      <h2>Subscribe to our mailing list</h2>
+      <label for="mce-EMAIL">EMAIL Address</label>
+      <input type="email" value="" name="EMAIL" id="mce-EMAIL">
+      <button type="button" id="btnSubscribe">Subscribe!</button>
+      <button type="button" id="btnReset">Reset</button>
+    </form>
+  </body>
+</html>
