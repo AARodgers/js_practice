@@ -3,8 +3,20 @@
     <title>Math Fun</title>
     <script>
       function registerEvents() {
-        document.mathWiz.operate.addEventListener('click', doTheMath, false);
+        document.mathWiz.operate.addEventListener('click', validate, false);
       }
+
+      function validate() {
+        var first = document.mathWiz.numberOne.value;
+        var second = document.mathWiz.numberTwo.value;
+        var operator = document.mathWiz.operator.value;
+        if (/^\d+$/.test(first) && /^\d+$/.test(second)) {
+          doTheMath();
+        } else {
+          alert("Error: Both numbers must be numberic");
+        }
+      }
+
 
       function doTheMath() {
         var first = parseInt(document.mathWiz.numberOne.value);
@@ -28,11 +40,9 @@
       }
     </script>
   </head>
-  <!--onload event fires (the registerEvent function is called) when the document has finished loading-->
   <body onload="registerEvents();">
+    <div id="formErrors"></div>
     <form name="mathWiz">
-      <!--the name of the form is just the name that the developer calls the form, you can use this name
-      attribute to access the form using the DOM -->
       <label>First Number: <input type="number" name="numberOne"></label><br>
       <label>Second Number: <input type="number" name="numberTwo"></label><br>
       <label>Operator:
