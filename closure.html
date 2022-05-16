@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Using Closure</title>
+    <script>
+      function greetVisitor(phrase) {
+        var welcome = phrase + ". Great to see you!<br><br>"; // local variable
+        var sayWelcome = function() {
+          document.getElementById("greeting").innerHTML += welcome;
+        }
+        return sayWelcome;
+      }
+
+      // wait until the document is loaded
+      document.addEventListener('DOMContentLoaded', function() {
+      // make a function
+      var personalGreeting = greetVisitor("Hola Amiga");
+      // make another function
+      var anotherGreeting = greetVisitor("Howdy, Friend");
+
+      // look at  the code of the first function
+      document.getElementById("greeting").innerHTML +=
+      "personalGreeting.toString() <br>" + personalGreeting.toString() + "<br>";
+      //run the first function
+      personalGreeting(); // alerts "Hola Amiga. Great to see you!"
+      // look at the code of the second function
+      document.getElementById("greeting").innerHTML +=
+      "anotherGreeting.toString() <br>" + anotherGreeting.toString() + "<br>";
+      // run the 2nd function
+      anotherGreeting(); // alerts "Howdy, Friend. Great to see you!"
+      // check the first function
+      personalGreeting(); // alerts "Hola Amiga. Great to see you!"
+      // finish the addEventListener method
+      }, false);
+    </script>
+  </head>
+  <body>
+    <p id="greeting"></p>
+  </body>
+</html>
