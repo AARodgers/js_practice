@@ -8,7 +8,8 @@
         var sayWelcome = function() {
           document.getElementById("greeting").innerHTML += welcome;
         }
-        return sayWelcome;
+        return sayWelcome; /** by returning sayWelcome, the greetVisitor functions internal data becomes
+         available to the outside world or global?*/
       }
 
       // wait until the document is loaded
@@ -24,6 +25,7 @@
       //run the first function
       personalGreeting(); // alerts "Hola Amiga. Great to see you!"
       // look at the code of the second function
+
       document.getElementById("greeting").innerHTML +=
       "anotherGreeting.toString() <br>" + anotherGreeting.toString() + "<br>";
       // run the 2nd function
