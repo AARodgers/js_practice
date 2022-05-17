@@ -2,12 +2,17 @@
   <head>
     <title>Function Factory</title>
     <script>
+      // this is the factory function, to use it, assign its return value to a variable
       function createMessageAlert(theMessage) {
         return function() {
           alert (theMessage);
         }
       }
       var badEmailError = createMessageAlert("Unknown email address");
+      /** this creates a closure that can used elsewhere in the program by running badEmailError as a
+       * function in the addEventListener
+       */
+
       var wrongPasswordError = createMessageAlert("That's not your password!");
 
       window.addEventListener('load', loader, false);
