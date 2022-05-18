@@ -12,10 +12,23 @@
         document.getElementById('content').innerHTML = this.responseText;
       }
       function documentLoader() {
-        var oReq = new XMLHttpRequest();
+        var oReq = new XMLHttpRequest(); /** creates a new XMLHttpRequest, the methods and properties of
+        the XMLHttpRequest object are accessible through the oReq object */
         oReq.onload = reqListener;
+        /** Above line assigns a function, reqListener, to the onload event of the oReq object. The
+         * purpuse of this function is to cause the reqListener function to be called when oReq loads a
+         * document */
         oReq.open("get", "loadme.txt", true);
+        /** Above line uses open method to create a request, it uses the HTTP GET method to load the file
+         * called loadme.txt. The third parameter  is the asyn argument and specifies whether the request
+         * should be asynchronous. False = the send method won't return until the request is complete.
+         * True (it is rarely true) = notifications about the completion of the request are provided through
+         * event listeners. Because event listener is set to listen for the load event, an asynchronous request
+         * is what is desired.
+         */
         oReq.send();
+        /** Above line sends the requests that you created with the open method. The open method gets the
+         * latest version of the requested file. 
       }
     </script>
   </head>
@@ -26,3 +39,5 @@
     <div id="content"></div>
   </body>
 </html>
+
+<!--I don't think this is working -->
