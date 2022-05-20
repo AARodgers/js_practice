@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--Wrong Way to Do! because at the JS runs, the browser doesn't yet know about the div
+  with the id = "myDiv"-->
+  <html>
+    <head>
+      <script>
+        document.getElementById("myDiv").innerHTML = "This div is MY div";
+      </script>
+    </head>
+    <body>
+      <div id = "myDiv">This div is your div.</div>
+    </body>
+  </html>
+
+<!-- Right way to do it is to:
+ 1. Place your JS at the bottom of your HTML file, right before </body>
+  2. Put your JS code in a function. Then you can call the function by using an onload event attribute in the
+starting body tag like below-->
+
+<html>
+<head>
+  <script>
+    function nameMyDiv () {
+      document.getElementById.innerHTML = "This div is  MY div";
+    }
+  </script>
+  <body onload = "nameMyDiv();">
+    <div id = "myDIV">This div is your div</div>
+  </body>
+</head>
+</html>
